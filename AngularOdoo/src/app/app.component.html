@@ -1,0 +1,24 @@
+<div style="background-color:#71639e">
+    <button mat-menu-item [matMenuTriggerFor]="menu">
+        <mat-icon>view_module</mat-icon>
+    </button>
+
+
+    <mat-menu #menu="matMenu" >
+        <button mat-menu-item [matMenuTriggerFor]="item1">Discuss</button>
+        <button mat-menu-item routerLink="/">Contact</button>
+        <button mat-menu-item>Sales</button>
+        <button mat-menu-item>Point of Sale</button>
+        <button mat-menu-item>Accounting</button>
+        <button mat-menu-item>Purchase</button>
+        <button mat-menu-item>Inventory</button>
+        
+    </mat-menu>
+
+    <mat-menu #item1>
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+    </mat-menu>
+</div>
+<router-outlet></router-outlet>
+

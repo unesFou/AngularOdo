@@ -1,0 +1,103 @@
+<div class="shadow" style="padding-top: 12px ; padding-left: 12px ;border-bottom: 1px solid #dee2e6;
+padding-top: 5px;padding-right: 16px;padding-bottom: 5px;padding-left: 16px;background-color: white;">
+    <div style="padding-top: 6px ; padding-left: 12px ;">
+        <div style="right: inherit;">
+            <label style="font-size: x-large; position: relative; " routerLink="/">Contacts / New</label>
+        </div>
+    </div>
+    <div style="padding-top: 12px;padding-left: 19px;">
+        <button type="button" class="btn btn-outline-primary" (click)="saveContact()" routerLink="/add-contact">Create</button>
+    </div>
+</div>
+
+<!-- ==========================================Form=============================== -->
+<div class="container pt-3"></div>
+<div class="card mx-auto" style="max-width: 64rem;">
+    <form class="form-horizontal">
+        <div style="position: relative;margin-left: 22%;">
+            <br>
+            <div class="row">
+                <div class="col-2" style="position: relative;">
+                    <i class="bi bi-calendar-date fa-10x" style="font-size:25px;"></i>
+                    <span class="text-right"> Metting </span>
+                </div>
+                <div class="col-2" style="position: relative;">
+                    <i class="bi bi-currency-dollar" style="font-size:25px;"></i> Sales
+                </div>
+                <div class="col-2" style="position: relative;">
+                    <i class="bi bi-credit-card" style="font-size:25px;"></i> Purchases
+                </div>
+                <div class="col-2" style="position: relative;">
+                    <i class="bi bi-truck" style="font-size:25px;"></i> No Data yet
+                </div>
+                <div class="col-2" style="position: relative;">
+                    <i class="bi bi-pencil-square" style="font-size:25px;"></i> Invoiced
+                </div>
+                <div class="col-2" style="position: relative;">
+                    <i class="bi bi-pencil-square" style="font-size:25px;"></i> Vendor bills
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="form-group" style="position:relative; margin-left: 10px;">
+            <!-- Radio button -->
+            <div class="form-check" style="position: absolute">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    <span style="font-size: 13px;">Individual</span></label>
+            </div>
+            <div class="form-check" style="margin-left: 100px;">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                    <span style="font-size: 13px;"> Company </span>
+                </label>
+            </div>
+        </div>
+
+        <div class="d-flex align-items-end bg-light mb-3" style="height: 200px;">
+            <div class="row" style="padding-left: 30px;">
+                <div class="col">
+                    <span style="position:absolute">Contact</span>
+                    
+                  
+                        <input type="text" style="margin-left: 200px;height: 25px;width: 50%;margin-bottom: 1%;"
+                        class="form-control" id="street1" required 
+                        [(ngModel)]="ctn.name" name="street1" placeholder="Street..."/>
+
+                    <input class="form-control" style="margin-left: 200px;height: 25px;width: 50%;margin-bottom: 1%;" type="text"
+                        placeholder="Street2..." />
+                    <div class="row" style="margin-left: 200px;margin-right: -136px;width: 50%;margin-bottom: 1%;">
+                        <input class="form-control" style="width: 45%;height: 25px;margin-bottom: 1%;" type="text" placeholder="City" />
+                        <input class="form-control" style="width: 30%;height: 25px;margin-bottom: 1%;" type="text" placeholder="State" />
+                        <input class="form-control" style="width: 25%;height: 25px;margin-bottom: 1%;" type="text" placeholder="Zip" />
+                    </div>
+                    <div class="col">
+                        <input class="form-control" style="margin-left: 200px;height: 25px;width: 50%;margin-bottom: 1%;" type="text"
+                            placeholder="Country" />
+                    </div>
+                    <div class="col">
+                        <span style="position:absolute">Vat</span>
+                        <input class="form-control" style="margin-left: 200px;height: 25px;width: 50%;margin-bottom: 1%;" type="text"
+                            placeholder="e.g. BE0477472701" />
+                    </div>
+                </div>
+                <div class="col">
+                    <span style="position:absolute">Job position</span>
+                    <input class="form-control" style="margin-left: 200px;height: 25px;width: 50%;margin-bottom: 1%;" type="text" />
+                    <span style="position:absolute">Phone</span>
+                    <input class="form-control" style="margin-left: 200px;height: 25px;width: 50%;margin-bottom: 1%;" type="text" />
+                    <span style="position:absolute">Mobile</span>
+                    <input class="form-control" style="margin-left: 200px;height: 25px;width: 50%;margin-bottom: 1%;" type="text" />
+                    <span style="position:absolute">Email</span>
+                    <input class="form-control" style="margin-left: 200px;height: 25px;width: 50%;margin-bottom: 1%;" type="text" />
+                    <span style="position:absolute">Web site</span>
+                    <input class="form-control" style="margin-left: 200px;height: 25px;width: 50%;margin-bottom: 1%;" type="text" />
+                    <span style="position:absolute">Title</span>
+                    <input class="form-control" style="margin-left: 200px;height: 25px;width: 50%;margin-bottom: 1%;" type="text" />
+                </div>
+
+
+            </div>
+        </div>
+    </form>
+</div>
