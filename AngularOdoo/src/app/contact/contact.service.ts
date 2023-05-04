@@ -8,8 +8,8 @@ import { contact } from './model/contact';
 })
 export class ContactService {
 
-readonly URL = 'http://localhost:8080/contact'
-readonly Endpoint_Contact = '/all'
+readonly URL = 'http://localhost:8080/contact/'
+readonly Endpoint_Contact = 'all'
 constructor(private httpClient : HttpClient) { }
 
 getContacts(){
@@ -17,7 +17,10 @@ getContacts(){
 }
 
 create(ctn: contact): Observable<contact> {
-  return this.httpClient.post(this.URL+'/add', ctn);
+  return this.httpClient.post(this.URL+'add', ctn);
 }
 
+getContactById(id : number){
+  return this.httpClient.get(this.URL + id)
+ }
 }

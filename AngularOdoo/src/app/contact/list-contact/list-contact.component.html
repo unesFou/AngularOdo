@@ -8,7 +8,7 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr *ngFor="let contact of contacts[0]">
+		<tr *ngFor="let contact of contacts[0]" (click)="detailsContact(contact.id)">
 			<td>{{ contact.name }} </td>
 			<td>{{ contact.phone }}</td>
 			<td>{{ contact.email }}</td>
@@ -17,3 +17,4 @@
 </table>
 
 </div>
+<app-root></app-root>
