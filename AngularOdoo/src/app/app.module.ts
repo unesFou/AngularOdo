@@ -17,6 +17,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { ListContactComponent } from './contact/list-contact/list-contact.component';
 import { FormsModule } from '@angular/forms';
+import { DetailContactComponent } from './contact/detail-contact/detail-contact.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { FormsModule } from '@angular/forms';
       ListContactComponent,
       ContactComponent,
       ContactCardComponent,
+      DetailContactComponent
          ],
   imports: [
     BrowserModule,

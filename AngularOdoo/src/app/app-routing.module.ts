@@ -9,7 +9,7 @@ const routes: Routes = [
   {path:'' , redirectTo:'contact-card', pathMatch:'full'},
   {path:'contact-card' , component : ContactCardComponent },
   {path:'list-contact', component:ListContactComponent},
-  {path:'detail-contact' , component:DetailContactComponent},
+  {path:'detail-contact/:id' , component:DetailContactComponent},
   {path:'add-contact' , component:AddContactComponent},
 ];
 

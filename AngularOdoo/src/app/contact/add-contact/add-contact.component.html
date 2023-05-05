@@ -62,41 +62,42 @@ padding-top: 5px;padding-right: 16px;padding-bottom: 5px;padding-left: 16px;back
                   
                         <input type="text" style="margin-left: 200px;height: 25px;width: 50%;margin-bottom: 1%;"
                         class="form-control" id="street1" required 
-                        [(ngModel)]="ctn.name" name="street1" placeholder="Street..."/>
+                        [(ngModel)]="ctn.name" name="name" placeholder="Street..."/>
 
                     <input class="form-control" style="margin-left: 200px;height: 25px;width: 50%;margin-bottom: 1%;" type="text"
-                        placeholder="Street2..." />
+                    [(ngModel)]="ctn.street2" name="name" placeholder="Street2..." />
                     <div class="row" style="margin-left: 200px;margin-right: -136px;width: 50%;margin-bottom: 1%;">
-                        <input class="form-control" style="width: 45%;height: 25px;margin-bottom: 1%;" type="text" placeholder="City" />
-                        <input class="form-control" style="width: 30%;height: 25px;margin-bottom: 1%;" type="text" placeholder="State" />
-                        <input class="form-control" style="width: 25%;height: 25px;margin-bottom: 1%;" type="text" placeholder="Zip" />
+                        <input class="form-control" style="width: 45%;height: 25px;margin-bottom: 1%;" type="text"
+                        [(ngModel)]="ctn.city" name="city" placeholder="City" />
+                        <input class="form-control" style="width: 30%;height: 25px;margin-bottom: 1%;" type="text"
+                        [(ngModel)]="ctn.stat" name="stat" placeholder="State" />
+                        <input class="form-control" style="width: 25%;height: 25px;margin-bottom: 1%;" type="text"
+                        [(ngModel)]="ctn.zip" name="zip" placeholder="Zip" />
                     </div>
                     <div class="col">
                         <input class="form-control" style="margin-left: 200px;height: 25px;width: 50%;margin-bottom: 1%;" type="text"
-                            placeholder="Country" />
+                        [(ngModel)]="ctn.country" name="country"  placeholder="Country" />
                     </div>
                     <div class="col">
                         <span style="position:absolute">Vat</span>
                         <input class="form-control" style="margin-left: 200px;height: 25px;width: 50%;margin-bottom: 1%;" type="text"
-                            placeholder="e.g. BE0477472701" />
+                        [(ngModel)]="ctn.vat" name="vat"  placeholder="e.g. BE0477472701" />
                     </div>
                 </div>
                 <div class="col">
                     <span style="position:absolute">Job position</span>
                     <input class="form-control" style="margin-left: 200px;height: 25px;width: 50%;margin-bottom: 1%;" type="text" />
                     <span style="position:absolute">Phone</span>
-                    <input class="form-control" style="margin-left: 200px;height: 25px;width: 50%;margin-bottom: 1%;" type="text" />
+                    <input class="form-control" name="phone" [(ngModel)] = "ctn.phone" style="margin-left: 200px;height: 25px;width: 50%;margin-bottom: 1%;" type="text" />
                     <span style="position:absolute">Mobile</span>
-                    <input class="form-control" style="margin-left: 200px;height: 25px;width: 50%;margin-bottom: 1%;" type="text" />
+                    <input class="form-control" name="mobile" [(ngModel)] = "ctn.mobile" style="margin-left: 200px;height: 25px;width: 50%;margin-bottom: 1%;" type="text" />
                     <span style="position:absolute">Email</span>
-                    <input class="form-control" style="margin-left: 200px;height: 25px;width: 50%;margin-bottom: 1%;" type="text" />
+                    <input class="form-control" name="email" [(ngModel)] = "ctn.email" style="margin-left: 200px;height: 25px;width: 50%;margin-bottom: 1%;" type="text" />
                     <span style="position:absolute">Web site</span>
                     <input class="form-control" style="margin-left: 200px;height: 25px;width: 50%;margin-bottom: 1%;" type="text" />
                     <span style="position:absolute">Title</span>
                     <input class="form-control" style="margin-left: 200px;height: 25px;width: 50%;margin-bottom: 1%;" type="text" />
                 </div>
-
-
             </div>
         </div>
     </form>

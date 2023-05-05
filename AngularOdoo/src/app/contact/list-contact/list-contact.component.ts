@@ -36,7 +36,8 @@ export class ListContactComponent implements OnInit {
     this.contactService.getContactById(id).subscribe(data =>{
       this.ctn = data;
       console.log(this.ctn);
+      this.router.navigate(['/detail-contact' , this.ctn.id]);
+      //console.log();
     });
-    this.router.navigate(["/detail-contact"]);
   }
 }
