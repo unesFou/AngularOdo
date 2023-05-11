@@ -19,7 +19,6 @@ import { ListContactComponent } from './contact/list-contact/list-contact.compon
 import { FormsModule } from '@angular/forms';
 import { DetailContactComponent } from './contact/detail-contact/detail-contact.component';
 
-
 @NgModule({
   declarations: [	
     AppComponent,
@@ -39,7 +38,7 @@ import { DetailContactComponent } from './contact/detail-contact/detail-contact.
     MatIconModule,
     HttpClientModule,
     NgbModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

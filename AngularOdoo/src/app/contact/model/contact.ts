@@ -1,5 +1,6 @@
-/**/export interface contact extends Object{
+/**/export interface contact {
     id? : number;
+    ischecked? : boolean ;
     name?:string;
     street1? : string;
     street2? : string;

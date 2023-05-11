@@ -1,15 +1,32 @@
+<br><br>
+<div class="row justify-content-center" >
+	<button *ngIf="btn"
+		style="width: auto; background-color: #FFFFFF; align-items: center;
+			background-color: hsl(0, 0%, 100%);
+			border: 1px solid rgba(0, 0, 0, 0.1);
+			border-radius: .25rem;" 
+			mat-button [matMenuTriggerFor]="menu">Menu</button>
+		<mat-menu #menu="matMenu">
+		<button mat-menu-item>Supprimer</button>
+		<button mat-menu-item>Exporter</button>
+		</mat-menu>
+	
+	</div>
+	
 <div class="container box" style="margin-top: 10px;">
   <table class="table align-middle mb-0 bg-white">
     <thead class="bg-light">
 		<tr>
+			<th scope="col"><input type="checkbox"> item </th>
 			<th scope="col">Nom</th>
 			<th scope="col">Téléphone</th>
 			<th scope="col">Courriel</th>
 		</tr>
 	</thead>
 	<tbody>
-		<tr *ngFor="let contact of contacts[0]" (click)="detailsContact(contact.id)">
-			<td>{{ contact.name }} </td>
+		<tr *ngFor="let contact of contacts[0]">
+			<td><input type="checkbox" [(ngModel)] = "contact.ischecked"  (change)="toggleButtone()"></td>
+			<td  (click)="detailsContact(contact.id)">{{ contact.name }} </td>
 			<td>{{ contact.phone }}</td>
 			<td>{{ contact.email }}</td>
 		</tr>

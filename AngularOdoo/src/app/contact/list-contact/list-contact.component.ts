@@ -1,6 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ContactService } from '../contact.service'
-import { contact } from '../model/contact'
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -12,14 +11,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ListContactComponent implements OnInit {
 
   contacts :  any[] = [] ;
-  
   ctn : any;
-  @Output() buttonWasClicked = new EventEmitter<contact>();
-
+  ischecked : boolean = false ;
+  btn : boolean = false;
+  
   constructor(
     private route: ActivatedRoute,
     private router:Router,
-    private contactService : ContactService) {   }
+    private contactService : ContactService) 
+    {    }
 
   ngOnInit() {
   this.contactService.getContacts().subscribe(data => {
@@ -28,16 +28,25 @@ export class ListContactComponent implements OnInit {
   });
   }
 
-  onButtonClick() {
-    this.buttonWasClicked.emit(this.ctn);
-    }
-
   detailsContact(id : number){
     this.contactService.getContactById(id).subscribe(data =>{
       this.ctn = data;
       console.log(this.ctn);
       this.router.navigate(['/detail-contact' , this.ctn.id]);
-      //console.log();
     });
   }
+
+  toggleButtone() : boolean | any {
+  let list : Boolean[] = [] ;
+    for(var i = 0;i<this.contacts[0].length;i++){
+      if (this.contacts[0][i].ischecked){
+          list.push(this.contacts[0][i].ischecked)
+        }
+      }
+      if (list.length > 0 )
+        return this.btn = true;
+      else return this.btn = false;
+      }
 }
+
+
