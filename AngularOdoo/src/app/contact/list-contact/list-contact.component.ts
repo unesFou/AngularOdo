@@ -47,6 +47,16 @@ export class ListContactComponent implements OnInit {
         return this.btn = true;
       else return this.btn = false;
       }
+
+  deleteAllByIds() {
+    let list : Number[] = [] ;
+    for(var i = 0;i<this.contacts[0].length;i++){
+      if (this.contacts[0][i].ischecked){list.push(this.contacts[0][i].id)}
+      }
+      this.contactService.deleteProductsByIds(list).subscribe(data =>
+        this.contacts = data);
+        this.router.navigate(['/list-contact']);
+    }
 }
 
 

@@ -23,4 +23,9 @@ create(ctn: contact): Observable<contact> {
 getContactById(id : number){
   return this.httpClient.get(this.URL + id)
  }
+
+ deleteProductsByIds(ids: Number[]): Observable<any> {
+  const url = `${this.URL}?ids=${ids.join(',')}`;
+  return this.httpClient.delete(url);
+}
 }

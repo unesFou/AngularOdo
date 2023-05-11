@@ -7,7 +7,7 @@
 			border-radius: .25rem;" 
 			mat-button [matMenuTriggerFor]="menu">Menu</button>
 		<mat-menu #menu="matMenu">
-		<button mat-menu-item>Supprimer</button>
+		<button mat-menu-item  (click) = "deleteAllByIds()">Supprimer</button>
 		<button mat-menu-item>Exporter</button>
 		</mat-menu>
 	
