@@ -28,4 +28,9 @@ getContactById(id : number){
   const url = `${this.URL}?ids=${ids.join(',')}`;
   return this.httpClient.delete(url);
 }
+
+updateContacts(ctn: contact): Observable<contact> {
+  const url = `${this.URL}${ctn.id}`;
+  return this.httpClient.put<contact>(url, ctn);
+}
 }

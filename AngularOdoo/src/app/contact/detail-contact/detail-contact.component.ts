@@ -25,6 +25,14 @@ export class DetailContactComponent implements OnInit {
       )
   }
 
+  onSubmit() {
+    this.contactService.updateContacts(this.ctn).subscribe(data  => {
+      console.log('Contact updated successfully:', data);
+    }, error => {
+      console.error('Error updating Contact:', error);
+    });
+  }
+
   
 
 }
