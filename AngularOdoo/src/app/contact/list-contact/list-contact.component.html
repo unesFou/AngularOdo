@@ -1,4 +1,28 @@
-<br><br>
+<div style="padding-top: 12px ; padding-left: 12px ;border-bottom: 1px solid #dee2e6;width:90%;
+padding-top: 5px;padding-right: 16px;padding-bottom: 5px;padding-left: 16px;background-color: white;">
+  <div style="padding-top: 6px ; padding-left: 12px ;">
+    <div style="right: inherit;">
+      <label style="font-size: x-large; position: relative;">Contacts</label>
+    </div>
+    <div style="position: absolute;right: 20px; width: 720px">
+      <div class="input-group">
+        <input class="form-control border-end-0 border" type="search" placeholder="Search..." id="example-search-input">
+        <span class="input-group-append">
+            <button class="btn btn-outline-secondary bg-white border-start-0 border-bottom-0 border ms-n5" type="button">
+                <i class="bi bi-search"></i>
+            </button>
+        </span>
+      </div>
+        <mat-icon style="position: absolute;left: 97%;" routerLink="/list-contact">list</mat-icon>
+        <mat-icon style="position: absolute;left: 93%;" routerLink="/contact-card">grid_on</mat-icon>
+      <!-- <i class="bi bi-search"></i> -->
+    </div>
+  </div>
+  <div style="padding-top: 12px;padding-left: 19px;">
+    <button type="button" class="btn btn-outline-primary" routerLink="/add-contact">Create</button>
+  </div>
+</div>
+<br>
 <div class="row justify-content-center" >
 	<button *ngIf="btn"
 		style="width: auto; background-color: #FFFFFF; align-items: center;
@@ -17,7 +41,7 @@
   <table class="table align-middle mb-0 bg-white">
     <thead class="bg-light">
 		<tr>
-			<th scope="col"><input type="checkbox"> item </th>
+			<th scope="col"><input type="checkbox" [(ngModel)]="checkAll" (change)="checkAllChanged()"> item </th>
 			<th scope="col">Nom</th>
 			<th scope="col">Téléphone</th>
 			<th scope="col">Courriel</th>

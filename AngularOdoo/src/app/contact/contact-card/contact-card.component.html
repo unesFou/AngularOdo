@@ -1,4 +1,4 @@
-<div style="padding-top: 12px ; padding-left: 12px ;border-bottom: 1px solid #dee2e6;
+<div style="padding-top: 12px ; padding-left: 12px ;border-bottom: 1px solid #dee2e6;width:90%;
 padding-top: 5px;padding-right: 16px;padding-bottom: 5px;padding-left: 16px;background-color: white;">
   <div style="padding-top: 6px ; padding-left: 12px ;">
     <div style="right: inherit;">
@@ -13,6 +13,8 @@ padding-top: 5px;padding-right: 16px;padding-bottom: 5px;padding-left: 16px;back
             </button>
         </span>
       </div>
+        <mat-icon style="position: absolute;left: 97%;" routerLink="/list-contact">list</mat-icon>
+        <mat-icon style="position: absolute;left: 93%;" routerLink="/contact-card">grid_on</mat-icon>
       <!-- <i class="bi bi-search"></i> -->
     </div>
   </div>
@@ -20,12 +22,15 @@ padding-top: 5px;padding-right: 16px;padding-bottom: 5px;padding-left: 16px;back
     <button type="button" class="btn btn-outline-primary" routerLink="/add-contact">Create</button>
   </div>
 </div>
-
-<div style="max-width: 400px; padding: 1em; left: 10;">
-  <mat-card routerLink="/detail-contact">
+<diV style="display: block ruby;">
+<div 
+style="max-width: 400px; padding: 1em; left: 10; width: 50%;" 
+      *ngFor="let contact of contacts[0]">
+  <mat-card routerLink="/detail-contact"  (click)="detailsContact(contact.id)">
     <mat-card-header>
-      <mat-card-title>Codeible</mat-card-title>
-      <mat-card-subtitle>Codeible.com</mat-card-subtitle>
+      <mat-card-title>{{contact.name}}</mat-card-title>
+      <mat-card-subtitle>{{contact.phone}}</mat-card-subtitle>
     </mat-card-header>
   </mat-card>
 </div>
+</diV>

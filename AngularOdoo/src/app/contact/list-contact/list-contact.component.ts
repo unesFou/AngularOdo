@@ -13,6 +13,7 @@ export class ListContactComponent implements OnInit {
   contacts :  any[] = [] ;
   ctn : any;
   ischecked : boolean = false ;
+  checkAll : boolean = false ;
   btn : boolean = false;
   
   constructor(
@@ -57,6 +58,16 @@ export class ListContactComponent implements OnInit {
         this.contacts = data);
         this.router.navigate(['/list-contact']);
     }
-}
 
+    checkAllChanged() : any {
+      for (let item of this.contacts[0]) {
+        if (this.checkAll == true){
+            item.ischecked = true;
+            this.btn = true;}
+        else if (this.checkAll == false){
+          item.ischecked = false;
+          this.btn = false;}
+        }
+}
+}
 
