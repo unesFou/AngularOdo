@@ -12,8 +12,8 @@ readonly URL = 'http://localhost:8080/contact/'
 readonly Endpoint_Contact = 'all'
 constructor(private httpClient : HttpClient) { }
 
-getContacts(){
- return this.httpClient.get(this.URL + this.Endpoint_Contact)
+getContacts() : Observable<any>{
+ return this.httpClient.get<any>(this.URL + this.Endpoint_Contact)
 }
 
 create(ctn: contact): Observable<contact> {
@@ -24,12 +24,12 @@ getContactById(id : number){
   return this.httpClient.get(this.URL + id)
  }
 
- deleteProductsByIds(ids: Number[]): Observable<any> {
+ deleteProductsByIds(ids: Number[]) : Observable<Number[]>{
   const url = `${this.URL}?ids=${ids.join(',')}`;
-  return this.httpClient.delete(url);
+  return this.httpClient.delete<number[]>(url);
 }
 
-updateContacts(ctn: contact): Observable<contact> {
+updateContacts(ctn: contact): Observable<any> {
   const url = `${this.URL}${ctn.id}`;
   return this.httpClient.put<contact>(url, ctn);
 }
