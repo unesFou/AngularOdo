@@ -26,10 +26,9 @@ export class ContactCardComponent implements OnInit {
   detailsContact(id : number){
     
     this.contactService.getContactById(id).subscribe(data =>{
-      if(window.confirm('Are sure you want to delete this item ?')){
       this.ctn = data;
       console.log(this.ctn);
-      this.router.navigate(['/detail-contact' , this.ctn.id]);}
+      this.router.navigate(['/detail-contact' , this.ctn.id]);
     });
   }
 

@@ -10,21 +10,19 @@ import { Router } from '@angular/router';
 
 export class ListContactComponent implements OnInit {
 
-  contacts : any[] = []  ;
+  contacts : any = []  ;
   ctn : any;
   ischecked : boolean = false ;
   checkAll : boolean = false ;
   btn : boolean = false;
- // contactss? : Observable<any[]> ;
   
   constructor(
-    //private route: ActivatedRoute,
     private router:Router,
     private contactService : ContactService) 
-    {    }
+    { this.router.routeReuseStrategy.shouldReuseRoute = () => false   }
   
 
-  ngOnInit() {
+  ngOnInit() : void {
     this.contactService.getContacts().subscribe(data => {
       this.contacts.push(data)
     });
@@ -38,27 +36,22 @@ export class ListContactComponent implements OnInit {
     });
   }
 
-  deleteAllByIds() {
+  deleteAllByIds() :void {
+    if(window.confirm('Are sure you want to delete this item ?')){
     let list : number[] = [] ;
-    let contact_s : any[] = [];
     for(var i = 0;i<this.contacts[0].length;i++){
       if (this.contacts[0][i].ischecked){
         list.push(this.contacts[0][i].id)
         }
       }
-    this.contactService.deleteProductsByIds(list).subscribe(()=>{
-        console.log(' is delete successfuly')
-        this.contacts[0].forEach((e : any)=>{
-              const index = this.contacts[0].indexOf(e);
-                        if(e.id == list){
-                          console.log(e.id+" == "+list);
-                          this.contacts[0].splice(index, 1);
-                        }else{ console.log(e.id+"!="+list);}
-                      });
-          this.contacts.push(this.contacts[0])
-      })
-    //return this.contacts[0]
-    }
+    this.contactService.deleteProductsByIds(list).subscribe(
+      ()=>{
+      console.log(' is delete successfuly')
+      this.router.navigate([('/list-contact')]);
+     });
+     }
+    
+  }
 
   toggleButtone() : boolean | any {
   let list : Boolean[] = [] ;

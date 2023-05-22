@@ -12,12 +12,12 @@ readonly URL = 'http://localhost:8080/contact/'
 readonly Endpoint_Contact = 'all'
 constructor(private httpClient : HttpClient) { }
 
-getContacts() : Observable<any>{
- return this.httpClient.get<any>(this.URL + this.Endpoint_Contact)
+getContacts() : Observable<contact>{
+ return this.httpClient.get<contact>(this.URL + this.Endpoint_Contact)
 }
 
 create(ctn: contact): Observable<contact> {
-  return this.httpClient.post(this.URL+'add', ctn);
+  return this.httpClient.post<contact>(this.URL+'add', ctn);
 }
 
 getContactById(id : number){
