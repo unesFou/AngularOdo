@@ -11,6 +11,7 @@ export class ContactCardComponent implements OnInit {
 
   contacts :  any[] = [] ;
   ctn : any;
+  searchQuery = ''
 
   constructor(private route: ActivatedRoute,
     private router:Router,
@@ -24,7 +25,6 @@ export class ContactCardComponent implements OnInit {
   }
 
   detailsContact(id : number){
-    
     this.contactService.getContactById(id).subscribe(data =>{
       this.ctn = data;
       console.log(this.ctn);

@@ -6,7 +6,7 @@
     </div>
     <div style="position: absolute;right: 20px; width: 720px">
       <div class="input-group">
-        <input class="form-control border-end-0 border" type="search" placeholder="Search..." id="example-search-input">
+        <input class="form-control border-end-0 border" [(ngModel)]="searchQuery" type="search" placeholder="Search..." id="example-search-input">
         <span class="input-group-append">
           <button class="btn btn-outline-secondary bg-white border-start-0 border-bottom-0 border ms-n5" type="button">
             <i class="bi bi-search"></i>
@@ -23,7 +23,8 @@
  </div>
     <!-- CARD AND STYLE -->
   <div  style="display: contents;width: auto;">
-    <div style=" padding: 1em;display:inline-block; left: 10; width: 25%; flex: 1;" *ngFor="let contact of contacts[0]">
+    <div style=" padding: 1em;display:inline-block; left: 10; width: 25%; flex: 1;"
+     *ngFor="let contact of contacts[0] | filter : searchQuery">
       <mat-card routerLink="/detail-contact" (click)="detailsContact(contact.id)">
         <mat-card-header>
           <picture>

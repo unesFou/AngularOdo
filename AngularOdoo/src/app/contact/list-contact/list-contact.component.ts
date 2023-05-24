@@ -1,6 +1,7 @@
 import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { ContactService } from '../contact.service';
 import { Router } from '@angular/router';
+import { contact } from '../model/contact';
 
 @Component({
   selector: 'app-list-contact',
@@ -10,6 +11,8 @@ import { Router } from '@angular/router';
 
 export class ListContactComponent implements OnInit {
 
+  searchQuery: string = '';
+  filteredResults: any[] = [];
   contacts : any = []  ;
   ctn : any;
   ischecked : boolean = false ;
@@ -72,8 +75,10 @@ export class ListContactComponent implements OnInit {
             this.btn = true;}
         else if (this.checkAll == false){
           item.ischecked = false;
-          this.btn = false;}
+          this.btn = false;
+        }
         }
 }
+
 }
 

@@ -19,6 +19,9 @@ import { ListContactComponent } from './contact/list-contact/list-contact.compon
 import { FormsModule } from '@angular/forms';
 import { DetailContactComponent } from './contact/detail-contact/detail-contact.component';
 
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
+
 @NgModule({
   declarations: [	
     AppComponent,
@@ -39,6 +42,8 @@ import { DetailContactComponent } from './contact/detail-contact/detail-contact.
     HttpClientModule,
     NgbModule,
     FormsModule,
+    Ng2SearchPipeModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
